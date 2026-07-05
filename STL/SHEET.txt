@@ -1,0 +1,99 @@
+========================================
+        C++ STL CHEATSHEET
+========================================
+
+------- PAIRS -------
+pair<int,int> p = {1, 2};
+p.first          → first element
+p.second         → second element
+pair<int,int> arr[] = {{1,2},{3,4}}  → array of pairs
+arr[i].first     → access pair in array
+
+------- VECTOR (use this most in DSA) -------
+vector<int> v;
+v.push_back(x)       → add to end
+v.emplace_back(x)    → faster push
+v.pop_back()         → remove last
+v.erase(v.begin()+i) → remove at index i
+v[i]                 → access element
+v.size()             → length
+v.empty()            → is empty?
+v.clear()            → remove all
+v.begin()            → first iterator
+v.end()              → past last element
+for(auto x : v)      → range loop (like python)
+sort(v.begin(),v.end()) → sort vector
+
+------- STACK (LIFO - Last In First Out) -------
+stack<int> st;
+st.push(x)    → add on top
+st.pop()      → remove top
+st.top()      → peek top element
+st.empty()    → is empty?
+NOTE: no indexing, only access top
+
+------- QUEUE (FIFO - First In First Out) -------
+queue<int> q;
+q.push(x)     → add to back
+q.pop()       → remove front
+q.front()     → peek front
+q.back()      → peek back
+
+------- PRIORITY QUEUE -------
+Max Heap (largest on top - DEFAULT):
+priority_queue<int> pq;
+
+Min Heap (smallest on top):
+priority_queue<int, vector<int>, greater<int>> pq;
+
+pq.push(x)    → insert
+pq.top()      → peek top
+pq.pop()      → remove top
+
+------- SET (unique elements, auto sorted) -------
+set<int> s;
+s.insert(x)   → add (auto dedup)
+s.erase(x)    → remove
+s.find(x)     → get iterator to x
+s.count(x)    → 1 if exists, 0 if not
+NOTE: like python set but always sorted
+
+------- MAP (key-value, sorted by key) -------
+map<int,int> mp;   → like python dictionary
+mp[key] = val      → insert/update
+mp.insert({k,v})   → insert
+mp[key]            → access value
+mp.count(key)      → check if key exists
+NOTE: use unordered_map for faster O(1) access
+
+------- USEFUL EXTRAS -------
+
+Sorting:
+sort(a, a+n)                    → sort array
+sort(v.begin(), v.end())        → sort vector
+sort(a, a+n, greater<int>())    → descending order
+
+Bit Tricks:
+__builtin_popcount(n)           → count 1 bits (int)
+__builtin_popcountll(n)         → count 1 bits (long long)
+
+Permutations:
+sort first, then:
+do {
+    cout << s << endl;
+} while(next_permutation(s.begin(), s.end()));
+
+Max/Min element:
+*max_element(a, a+n)            → max in array
+*min_element(a, a+n)            → min in array
+
+========================================
+QUICK REMINDER:
+- vector  → use almost always instead of array
+- map     → when you need key-value pairs
+- set     → when you need unique elements
+- stack   → when you need LIFO
+- queue   → when you need FIFO
+- unordered_map → faster than map (O(1) avg)
+- unordered_set → faster than set (O(1) avg)
+========================================
