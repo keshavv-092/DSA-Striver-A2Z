@@ -18,6 +18,18 @@ void unionn(int a[] ,int n1, int b[],int n2){
             j++;
         }
     }
+    while(j<n2){
+        if(uni.size()==0 || uni.back()<b[j]){
+                uni.push_back(b[j]);
+            }
+            j++;
+    }
+    while(i<n1){
+        if(uni.size()==0 || uni.back()<a[i]){
+                uni.push_back(a[i]);
+            }
+            i++;
+    }
     for(auto it:uni){
         cout << it << endl;
     }
