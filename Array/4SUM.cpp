@@ -45,6 +45,9 @@ vector<vector<int>> fourSum(vector<int> &nums, int target)
 }
 int main(){
     vector<int> v ={2,3,123,-1,-23,-21,1,0,-1};
-    threeSum(v);
+    int n;
+    cout << "enter target value" ;
+    cin >> n;
+    fourSum(v,n);
     return 0;
 }
