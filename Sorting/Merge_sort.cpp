@@ -27,7 +27,7 @@ void merge(int a[] , int low , int mid ,int high){
     } 
 }
 void merge_sort(int a[] , int low , int high){
-    if(low == high) return;
+    if(low >= high) return;
     int mid = (low+high)/2; 
     merge_sort(a , low , mid);
     merge_sort(a, mid+1 , high);
