@@ -7,7 +7,7 @@ int lowerBound(vector<int> v, int target)
     {
         int mid = (low + high) / 2;
 
-        if (v[mid] >= target)
+        if (v[mid] > target)
         {
             ans = mid;
             high = mid - 1;
@@ -19,8 +19,8 @@ int lowerBound(vector<int> v, int target)
 }
 int main()
 {
-    vector<int> v = {1, 2, 5, 7, 10, 22, 40};
-    int t = 8;
+    vector<int> v = {10, 20, 53, 72, 110, 122, 340};
+    int t = 5;
     cout << lowerBound(v, t);
     return 0;
 }
