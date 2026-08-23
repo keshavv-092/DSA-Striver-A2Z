@@ -1,27 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
-int sqrt(vector<int>& nums,int n){
-    int low = 0;
-    int high = nums.size()-1;
-    int ans = -1;;
+int sqrt(int n){
+    int low = 1;
+    int high = n;
     while(low<=high){
-        int mid = (low+high)/2;
-        if(nums[mid]*nums[mid]==n){
-            return nums[mid];
-        }
-        if(nums[mid]*nums[mid]<n){
-            ans = nums[mid];
+        long long mid = (low+high)/2;
+        long long val = mid*mid;
+        if(val<=n){
             low = mid+1;
         }
         else{
             high = mid -1 ;
         }
     }
-    return ans;
+    return high;
 }
 int main(){
-    vector<int> v = {1,2,3,6,7,8,9,10};
-    int n = 49;
-    cout << sqrt(v,n);
+    int n = 65;
+    cout << sqrt(n); 
     return 0;
 }
