@@ -62,6 +62,26 @@ Node* convertToLL(vector<int>v){
     }
     return head;
 }
+Node* DeleteVal(Node *head , int val){
+    if(head == NULL){
+        cout << "Empty Linked List ";
+        return head;
+    }
+    while(head!=NULL && head->info == val){
+        Node *todelete = head;
+        head = head->next;
+        delete todelete;
+    }
+    if(head == NULL) return head;
+    Node *temp = head;
+    while(temp!=NULL && temp->next!=NULL){
+        if(temp->next->info == val){
+            temp->next = temp->next->next;
+        }
+        else temp = temp->next;
+    }
+    return head;
+}
 void traverse(Node *head){
     Node *temp = head;
     while(temp){
@@ -74,5 +94,6 @@ int main(){
     vector<int> v = {2,3,4,5,10,20};
     Node *head = convertToLL(v);
     head = DeleteSpecific(head,2);
+    head = DeleteVal(head,10);
     traverse(head);
 }
